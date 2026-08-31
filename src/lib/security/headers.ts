@@ -18,9 +18,8 @@ function buildCsp(mode: DeploymentMode): string {
     "default-src 'self'",
     "base-uri 'self'",
     "object-src 'none'",
-    "frame-ancestors 'none'",
     "form-action 'self'",
-    isHosted
+    isHosted && process.env.NODE_ENV !== "development"
       ? `script-src 'self' 'sha256-${themeScriptHash}'`
       : "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
     "style-src 'self' 'unsafe-inline'",
@@ -43,7 +42,6 @@ export function getSecurityHeaders(
     },
     { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
     { key: "X-Content-Type-Options", value: "nosniff" },
-    { key: "X-Frame-Options", value: "DENY" },
     {
       key: "Permissions-Policy",
       value:
