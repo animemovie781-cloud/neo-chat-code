@@ -19,9 +19,7 @@ function buildCsp(mode: DeploymentMode): string {
     "base-uri 'self'",
     "object-src 'none'",
     "form-action 'self'",
-    isHosted && process.env.NODE_ENV !== "development"
-      ? `script-src 'self' 'sha256-${themeScriptHash}'`
-      : "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+    "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
     "style-src 'self' 'unsafe-inline'",
     `img-src 'self' data: blob: https:${isHosted ? "" : " http:"}`,
     "media-src 'self' data: blob:",
