@@ -1,6 +1,8 @@
 import { createApiErrorResponse } from "@/lib/api/middleware";
 import { getByokPublicKey } from "@/lib/byok/server";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     return Response.json(await getByokPublicKey(), {
