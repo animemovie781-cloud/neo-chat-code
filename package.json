@@ -20,7 +20,7 @@
     "byok:generate": "node scripts/generate-byok-key.mjs"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.111.0",
+    "@anthropic-ai/sdk": "^0.122.0",
     "@automerge/automerge": "^3.3.2",
     "@google/genai": "^2.17.1",
     "@modelcontextprotocol/sdk": "^1.30.0",
