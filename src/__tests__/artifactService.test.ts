@@ -50,7 +50,7 @@ describe("artifact prompt serialization", () => {
   });
 
   it("builds an intent-aware text polishing prompt with safety bounds", () => {
-    const prompt = polishTextContent("帮我问下 Neo Chat 现在怎么部署？");
+    const prompt = polishTextContent("帮我问下 Avenqor 现在怎么部署？");
 
     expect(prompt).toContain("infer the user's likely intent");
     expect(prompt).toContain("complete vague or under-specified wording");

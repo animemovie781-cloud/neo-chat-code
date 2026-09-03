@@ -1,6 +1,6 @@
 # Components
 
-The `src/components` directory contains React UI for the Neo Chat application. Components are grouped by product area and should keep rendering concerns separate from shared library logic, API route logic, and store internals.
+The `src/components` directory contains React UI for the Avenqor application. Components are grouped by product area and should keep rendering concerns separate from shared library logic, API route logic, and store internals.
 
 ## Directory Map
 

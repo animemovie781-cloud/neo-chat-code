@@ -1,6 +1,6 @@
 # Store Architecture
 
-Neo Chat uses Zustand for client state. Stores are split by domain and persisted with a hybrid local-first strategy: small synchronous settings live in `localStorage`, larger app data lives in IndexedDB through `localforage`, and transient UI state stays in memory.
+Avenqor uses Zustand for client state. Stores are split by domain and persisted with a hybrid local-first strategy: small synchronous settings live in `localStorage`, larger app data lives in IndexedDB through `localforage`, and transient UI state stays in memory.
 
 ## Directory Map
 

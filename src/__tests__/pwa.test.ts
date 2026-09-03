@@ -76,7 +76,7 @@ describe("PWA deployment policy", () => {
     ).toEqual(["https://chat.example.com/_next/static/app.js"]);
   });
 
-  it("unregisters its worker and removes only Neo Chat PWA caches", async () => {
+  it("unregisters its worker and removes only Avenqor PWA caches", async () => {
     const unregister = vi.fn().mockResolvedValue(true);
     const unrelatedUnregister = vi.fn().mockResolvedValue(true);
     const deleteCache = vi.fn().mockResolvedValue(true);

@@ -22,15 +22,15 @@ describe("search decision helpers", () => {
     const context = buildSearchContextForPrompt({
       sources: [
         {
-          title: "Neo Chat",
+          title: "Avenqor",
           url: "https://example.com/neo-chat",
-          content: "Neo Chat search context",
+          content: "Avenqor search context",
         },
       ],
       images: [
         {
           url: "https://example.com/neo-chat.png",
-          description: "Neo Chat product screenshot",
+          description: "Avenqor product screenshot",
         },
       ],
     });
@@ -41,6 +41,6 @@ describe("search decision helpers", () => {
     expect(context).toContain("Use Markdown images");
     expect(context).toContain("![");
     expect(context).toContain("https://example.com/neo-chat.png");
-    expect(context).toContain("Neo Chat product screenshot");
+    expect(context).toContain("Avenqor product screenshot");
   });
 });

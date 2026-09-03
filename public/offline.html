@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="theme-color" content="#09090b" />
-    <title>Neo Chat · Offline</title>
+    <title>Avenqor · Offline</title>
     <style>
       :root {
         color-scheme: light dark;
@@ -75,7 +75,7 @@
   <body>
     <main>
       <img src="/logo.png" alt="" />
-      <h1 id="title">Neo Chat is offline</h1>
+      <h1 id="title">Avenqor is offline</h1>
       <p id="detail">
         Reconnect once to finish preparing offline history access.
       </p>
@@ -85,18 +85,18 @@
       const lang = navigator.language.toLowerCase();
       const copy = lang.startsWith("zh")
         ? [
-            "Neo Chat 当前离线",
+            "Avenqor 当前离线",
             "请重新联网一次，以完成离线历史访问的准备。",
             "重试",
           ]
         : lang.startsWith("ja")
           ? [
-              "Neo Chat はオフラインです",
+              "Avenqor はオフラインです",
               "オフライン履歴の準備を完了するには、一度オンラインに戻ってください。",
               "再試行",
             ]
           : [
-              "Neo Chat is offline",
+              "Avenqor is offline",
               "Reconnect once to finish preparing offline history access.",
               "Retry",
             ];
