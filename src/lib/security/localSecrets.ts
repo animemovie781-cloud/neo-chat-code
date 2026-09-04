@@ -270,19 +270,19 @@ export async function decryptLocalSecret(
 ): Promise<string | undefined> {
   if (!envelope) return undefined;
   if (!isLocalEncryptedSecretEnvelope(envelope)) {
-    throw new Error("Invalid local secret envelope");
+    console.warn("Invalid local secret envelope"); return undefined;
   }
   if (envelope.context !== expectedContext) {
-    throw new Error("Local secret context mismatch");
+    console.warn("Local secret context mismatch"); return undefined;
   }
 
   const crypto = getCrypto();
   const { id, key } = await getKeyMaterial();
   if (envelope.keyId !== id) {
-    throw new Error("Local secret key id mismatch");
+    console.warn("Local secret key id mismatch"); return undefined;
   }
 
-  const plaintext = await crypto.subtle.decrypt(
+  try { const plaintext = await crypto.subtle.decrypt(
     {
       name: "AES-GCM",
       iv: bytesToArrayBuffer(base64UrlToBytes(envelope.iv)),
@@ -292,5 +292,5 @@ export async function decryptLocalSecret(
     bytesToArrayBuffer(base64UrlToBytes(envelope.ciphertext)),
   );
 
-  return new TextDecoder().decode(plaintext);
+  return new TextDecoder().decode(plaintext); } catch(err) { console.warn("Decryption failed"); return undefined; }
 }
